@@ -1,0 +1,444 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "peerID",
+				"type": "string"
+			}
+		],
+		"name": "_addPlayer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string[2]",
+				"name": "team0",
+				"type": "string[2]"
+			},
+			{
+				"internalType": "string[2]",
+				"name": "team1",
+				"type": "string[2]"
+			},
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_createGame",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_endGame",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_endRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "peerID",
+				"type": "string"
+			}
+		],
+		"name": "_leavePlayer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "word",
+				"type": "string"
+			}
+		],
+		"name": "_startRound",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address[2]",
+				"name": "team0",
+				"type": "address[2]"
+			},
+			{
+				"indexed": false,
+				"internalType": "address[2]",
+				"name": "team1",
+				"type": "address[2]"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "GameHostAddress",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "HostPeerID",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "bool",
+				"name": "isGameStarted",
+				"type": "bool"
+			}
+		],
+		"name": "CreatedGame",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "peerID",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "PlayerAdded",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "string",
+				"name": "peerID",
+				"type": "string"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "PlayerLeft",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "endRoundTimestamp",
+				"type": "uint256"
+			}
+		],
+		"name": "_calculateRoundTransfer",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "peerID",
+				"type": "string"
+			}
+		],
+		"name": "_getPlayer",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_getRoundWord",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_getTeam0PeerIDs",
+		"outputs": [
+			{
+				"internalType": "string[2]",
+				"name": "",
+				"type": "string[2]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_getTeam1PeerIDs",
+		"outputs": [
+			{
+				"internalType": "string[2]",
+				"name": "",
+				"type": "string[2]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_getTeamActor",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_isGameStarted",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "playerAddress",
+				"type": "address"
+			}
+		],
+		"name": "_isPlayerHostingGame",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_isTeam0Guessing",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "roomID",
+				"type": "string"
+			}
+		],
+		"name": "_viewGame",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "address",
+						"name": "gameHost",
+						"type": "address"
+					},
+					{
+						"internalType": "address[2]",
+						"name": "team0",
+						"type": "address[2]"
+					},
+					{
+						"internalType": "address[2]",
+						"name": "team1",
+						"type": "address[2]"
+					},
+					{
+						"internalType": "string[2]",
+						"name": "team0peerID",
+						"type": "string[2]"
+					},
+					{
+						"internalType": "string[2]",
+						"name": "team1peerID",
+						"type": "string[2]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isGameStarted",
+						"type": "bool"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRoundStarted",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentGuessingTeam",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "team0Actor",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "team1Actor",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "roundWord",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startRoundTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currentGameBalance",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct Charades.Game",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

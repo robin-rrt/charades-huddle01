@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  background-color: rgb(33, 33, 33);
+}
+
+#ConnectButton {
+  padding: 1%;
+}
+iframe[data-xstate] {
+  width: 100vw;
+  height: 50vh;
+  border: 0;
+  left: 0;
+  bottom: 0;
+}
+
+video{
+  width: 100%;
+}
+button {
+  background-color: rgb(56, 56, 255);
+  color: white;
+  font-size: 24px;
+  padding: 12px 24px;
+  margin: 0.5%;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+#player-selection {
+  display: block;
+  margin: 5% auto;
+  align-items: center;
+  font-weight: bold;
+  font-size: larger;
+  text-align: center;
+}
+
+#create-lobby-btn {
+  display: block;
+  margin: 5% auto;
+  align-items: center;
+}
+
+#join-lobby-btn {
+  display: block;
+  margin: 0 auto;
+  align-items: center;
+}
+
+#join-lobby-input {
+  display: block;
+  margin: 0 auto;
+  padding: 12px;
+  font-size: 24px;
+  border-radius: 4px;
+  border: 1%;
+  border-color: aliceblue;
+  align-items: center;
+  color: azure;
+}
